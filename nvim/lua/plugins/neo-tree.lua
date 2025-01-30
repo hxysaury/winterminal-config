@@ -33,4 +33,26 @@ return {
       desc = "Buffer Explorer",
     },
   },
+  -- config = function()
+  --   require("neo-tree").setup({
+  --     window = {
+  --       position = "left",
+  --       width = 30,
+  --     },
+  --     filesystem = {
+  --       follow_current_file = true, -- 确保切换到当前文件所在目录
+  --     },
+  --     event_handlers = {
+  --       {
+  --         event = "neo_tree_buffer_enter",
+  --         handler = function(args)
+  --           -- 切换工作目录到当前文件所在目录
+  --           local current_file = vim.api.nvim_buf_get_name(args.bufnr)
+  --           local current_dir = vim.fn.fnamemodify(current_file, ":p:h")
+  --           vim.cmd("cd " .. current_dir)
+  --         end,
+  --       },
+  --     },
+  --   })
+  -- end,
 }

@@ -127,7 +127,7 @@ map("n", "<leader>rp", '<cmd>TermExec cmd="python3 %"<cr>', { desc = "Run python
 map("n", "<leader>rc", '<cmd>TermExec cmd="cmake -P %"<cr>', { desc = "Run cmake codes" })
 -- execute "cargo run"
 map("n", "<leader>ru", '<cmd>TermExec cmd="cargo run"<cr>', { desc = "Run cargo codes" })
-map("n", "<leader>rg", '<cmd>TermExec cmd="go run"<cr>', { desc = "Run go codes" })
+map("n", "<leader>rg", '<cmd>TermExec cmd="go run %"<cr>', { desc = "Run go codes" })
 
 -- for persisted
 map("n", "<leader>fs", "<cmd>Telescope persisted<cr>", { desc = "Search history sessions" })

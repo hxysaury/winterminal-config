@@ -13,6 +13,8 @@ return {
       "ron",
       "sql",
       "css",
+      "lua"
     },
   },
 }
+

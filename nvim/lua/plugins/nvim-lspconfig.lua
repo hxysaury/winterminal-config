@@ -1,6 +1,8 @@
 return {
   "neovim/nvim-lspconfig",
+dependencies = { 'saghen/blink.cmp' },
   opts = {
+    capabilities = require('blink.cmp').get_lsp_capabilities(),
     servers = {
       pyright = {},
       ruff = {

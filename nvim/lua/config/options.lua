@@ -15,7 +15,17 @@ vim.g.neovide_hide_mouse_when_typing = true
 
 local opt = vim.opt
 opt.title = true
-opt.spell = false
+-- 自动切换工作目录
+opt.autochdir = true
+-- opt.spell = false
+-- 共享系统剪切
+opt.clipboard = "unnamedplus"
+-- 命令模式显示补全菜单
+opt.wildmenu = true
+-- /搜索时忽略大小写
+opt.ignorecase = true
+-- /搜索时智能大小写
+opt.smartcase = true
 opt.conceallevel = 0
 opt.wrap = true
 opt.relativenumber = false
@@ -35,7 +45,8 @@ opt.shell = "pwsh"
 -- opt.shellxquote = ""
 opt.modelines = 0
 opt.showcmd = false
-opt.scrolloff = 0
+-- 在光标上方和下方保留的最小屏幕行数
+opt.scrolloff = 4
 opt.cinkeys = "0{,0},0),0],0#,!^F,o,O,e"
 opt.indentkeys = "0{,0},0),0],0#,!^F,o,O,e"
 -- Undercurl
@@ -47,4 +58,3 @@ vim.g.lazyvim_python_lsp = "pyright"
 vim.g.lazyvim_python_ruff = "ruff"
 
 vim.g.lazyvim_rust_diagnostics = "rust-analyzer"
-
