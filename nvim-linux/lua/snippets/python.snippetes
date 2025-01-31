@@ -1,0 +1,6 @@
+snippet pri
+	print(${0})
+
+snippet main
+	if __name__ == '__main__':
+		${0}
