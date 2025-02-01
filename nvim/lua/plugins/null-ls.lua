@@ -17,6 +17,9 @@ return {
       null_ls.builtins.formatting.goimports.with({
         filetypes = { "go" },
       }),
+      null_ls.builtins.formatting.rustfmt.with({
+        filetypes = { "rs" },
+      }),
     }
   end,
 }

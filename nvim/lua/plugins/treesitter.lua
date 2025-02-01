@@ -13,8 +13,21 @@ return {
       "ron",
       "sql",
       "css",
-      "lua"
+      "lua",
+      "astro",
+      "cmake",
+      "cpp",
+      "fish",
+      "gitignore",
+      "graphql",
+      "http",
+      "java",
+      "php",
+      "vue",
+      "cpp",
+      "scss",
+      "sql",
+      "svelte",
     },
   },
 }
-
