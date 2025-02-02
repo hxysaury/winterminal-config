@@ -16,6 +16,7 @@ return {
       ["blade"] = { "blade-formatter", "rustywind" },
       ["javascript"] = { "prettier" },
       ["rust"] = { "rustfmt" },
+      ["json"] = { "prettierd" },
     },
   },
 }

@@ -73,3 +73,36 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt.formatoptions:remove({ "o" }) -- 防止使用 o 切换到下一行的时候自动加上注释符号(在上一行是注释的情况下)
   end,
 })
+-- 禁用自动格式化：
+---- 全局禁用：:FormatDisable
+---- 当前缓冲区禁用：:FormatDisable!
+
+-- 启用自动格式化：
+---- 全局启用：:FormatEnable
+require("conform").setup({
+  format_on_save = function(bufnr)
+    -- Disable with a global or buffer-local variable
+    if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
+      return
+    end
+    return { timeout_ms = 500, lsp_format = "fallback" }
+  end,
+})
+
+vim.api.nvim_create_user_command("FormatDisable", function(args)
+  if args.bang then
+    -- FormatDisable! will disable formatting just for this buffer
+    vim.b.disable_autoformat = true
+  else
+    vim.g.disable_autoformat = true
+  end
+end, {
+  desc = "Disable autoformat-on-save",
+  bang = true,
+})
+vim.api.nvim_create_user_command("FormatEnable", function()
+  vim.b.disable_autoformat = false
+  vim.g.disable_autoformat = false
+end, {
+  desc = "Re-enable autoformat-on-save",
+})

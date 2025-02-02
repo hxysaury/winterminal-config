@@ -39,7 +39,7 @@ map("n", "sl", "<C-w>l")
 
 -- Diagnostics
 map("n", "<C-j>", function()
-	vim.diagnostic.goto_next()
+  vim.diagnostic.goto_next()
 end, opts)
 -- Resize window
 map("n", "<C-w><left>", "<C-w><")
