@@ -23,7 +23,13 @@ nushell下载
 
 - `scoop install nu`
 
+neovim下载：
 
+- [https://github.com/neovim/neovim/blob/master/INSTALL.md](https://github.com/neovim/neovim/blob/master/INSTALL.md)
+
+neovide下载：
+
+- [https://neovide.dev/](https://neovide.dev/)
 
 
 # 1. powershell设置
@@ -192,8 +198,6 @@ def "proxy check" [] {
 Lazyvim项目地址：[GitHub - LazyVim/LazyVim: Neovim config for the lazy](https://github.com/LazyVim/LazyVim?tab=readme-ov-file)
 
 Lazyvim安装文档：[Fetching Title#cmv7](http://www.lazyvim.org/installation)
-
-
 
 
 
