@@ -12,6 +12,7 @@ return {
           -- When true, label for field and variable will format like "foo: Foo"
           -- instead of go's original syntax "foo Foo".
           add_colon_before_type = false,
+          align_type_to_right = true,
         },
         -- for lsp_config or typescript-tools
         ts_ls = {

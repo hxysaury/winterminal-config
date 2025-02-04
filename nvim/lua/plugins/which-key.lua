@@ -3,6 +3,7 @@ return {
   event = "VeryLazy",
   opts_extend = { "spec" },
   opts = {
+
     defaults = {},
     spec = {
       {
@@ -47,6 +48,10 @@ return {
     })
     wk.add({
       { "<leader>f", group = "find" },
+    })
+
+    wk.add({
+      { "<leader>l", group = "Others" },
     })
     wk.add({
       { "<leader>D", group = "DataBase" },

@@ -4,7 +4,7 @@ return {
   version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
   -- install jsregexp (optional!).
   build = "make install_jsregexp",
-  opts = function(_, opts)
-    require("luasnip.loaders.from_lua").lazy_load({ paths = "~/.config/nvim/lua/snippets" })
-  end,
+  -- opts = function(_, opts)
+  --   require("luasnip.loaders.from_lua").lazy_load({ paths = "~/.config/nvim/lua/snippets" })
+  -- end,
 }

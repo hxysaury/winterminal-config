@@ -79,6 +79,7 @@ vim.api.nvim_create_autocmd("FileType", {
 
 -- 启用自动格式化：
 ---- 全局启用：:FormatEnable
+---https://github.com/stevearc/conform.nvim/blob/master/doc/recipes.md#command-to-toggle-format-on-save
 require("conform").setup({
   format_on_save = function(bufnr)
     -- Disable with a global or buffer-local variable

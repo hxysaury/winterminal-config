@@ -1,23 +1,36 @@
-return {}
--- return({
---   "Kurama622/llm.nvim",
---   dependencies = { "nvim-lua/plenary.nvim", "MunifTanjim/nui.nvim" },
---   cmd = { "LLMSessionToggle", "LLMSelectedTextHandler" },
---   config = function()
---     require("llm").setup({
---       -- 其他配置...
---       url = "https://api.deepseek.com/chat/completions",
---       model = "deepseek-chat",
---       api_type = "openai",
---       fetch_key = function()
---         return switch("enable_deepseek")
---       end,
---       -- 其他配置...
---     })
---   end,
---   keys = {
---     { "<leader>ac", mode = "n", "<cmd>LLMSessionToggle<cr>" },
---     { "<leader>ae", mode = "v", "<cmd>LLMSelectedTextHandler 请解释下面这段代码<cr>" },
---     { "<leader>t", mode = "x", "<cmd>LLMSelectedTextHandler 英译汉<cr>" },
+return{}
+-- return {
+--   {
+--     "FLYDonkey123/deepseek.nvim",
+--     config = function()
+--       local api_key = os.getenv("DEEPSEEK_API_KEY")
+--       if not api_key then
+--         print("Error: DEEPSEEK_API_KEY environment variable is not set.")
+--         return
+--       end
+--
+--       require("deepseek").setup({
+--         api_key = api_key,
+--         api_url = "https://api.deepseek.com/v1", -- 可选配置
+--         keymaps = {
+--           generate = "<leader>lg", -- 代码生成快捷键
+--           optimize = "<leader>lo", -- 代码优化快捷键
+--           analyze = "<leader>la", -- 代码分析快捷键
+--           chat = "<leader>lc", -- AI 聊天快捷键
+--         },
+--         chat = {
+--           system_prompt = "You are a helpful AI assistant", -- 聊天系统提示
+--           max_history = 10, -- 最大聊天历史记录
+--           enable_memory = true, -- 启用聊天记忆
+--           ui = {
+--             enable = true,
+--             position = "float", -- 聊天界面位置
+--             width = 0.5, -- 浮动窗口宽度
+--             height = 0.5, -- 浮动窗口高度
+--             border = "rounded", -- 窗口边框样式
+--           },
+--         },
+--       })
+--     end,
 --   },
--- })
+-- }

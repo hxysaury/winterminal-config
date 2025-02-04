@@ -40,9 +40,9 @@ opt.guicursor =
 opt.list = true
 opt.listchars = { space = "·" }
 opt.shell = "pwsh"
--- opt.shellcmdflag = "-command"
--- opt.shellquote = '"'
--- opt.shellxquote = ""
+opt.shellcmdflag = "-command"
+opt.shellquote = '"'
+opt.shellxquote = ""
 opt.modelines = 0
 opt.showcmd = false
 -- 在光标上方和下方保留的最小屏幕行数
@@ -52,6 +52,7 @@ opt.indentkeys = "0{,0},0),0],0#,!^F,o,O,e"
 -- Undercurl
 vim.cmd([[let &t_Cs = "\e[4:3m"]])
 vim.cmd([[let &t_Ce = "\e[4:0m"]])
+
 vim.g.lazyvim_python_lsp = "pyright"
 
 -- Set to "ruff_lsp" to use the old LSP implementation version.

@@ -234,14 +234,27 @@ Lazyvim安装文档：[Fetching Title#cmv7](http://www.lazyvim.org/installation)
 
 - lua5.1
 
-  - luarocks.exe
-  - lua.exe
-  - https://github.com/rjpcomputing/luaforwindows/releases
+  - windows:
+
+  - ```
+    - luarocks.exe
+    - lua.exe
+    https://github.com/rjpcomputing/luaforwindows/releases
+    ```
+
+  - linux：
+
+  - ```bash
+    sudo apt-get install luarocks
+    sudo apt-get install lua5.1
+    ```
 
 - node
 
   - npm
+  
 - [交叉编译链arm-none-eabi-gcc](https://launchpad.net/gcc-arm-embedded/+download)
+
 - llvm-mingw
 
 - python
@@ -265,6 +278,21 @@ Lazyvim安装文档：[Fetching Title#cmv7](http://www.lazyvim.org/installation)
     ```
 
 - [neovide](https://github.com/neovide/neovide/releases)
+
+- [image-nvim：ueberzugpp（适合linux）](https://github.com/jstkdng/ueberzugpp)
+
+- ImageMagick
+
+  - linux:
+
+  - ```bash
+    sudo apt-get install imagemagick
+    ```
+
+  - windows:
+
+  - https://imagemagick.org/script/download.php
+
 
 
 
