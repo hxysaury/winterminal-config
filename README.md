@@ -31,8 +31,11 @@ neovide下载：
 
 - [https://neovide.dev/](https://neovide.dev/)
 
-
 # 1. powershell设置
+
+
+
+如果是win11的话会自带terminal，我是给卸载了，【设置->应用->安装的应用】
 
 
 ```lua
@@ -109,9 +112,53 @@ Set-Alias Cursor "C:\\Users\\Saury\\AppData\Local\\Programs\\cursor\\Cursor.exe"
 Set-Alias Music "D:\\Program Files\\Soda Music\\SodaMusicLauncher.exe"
 Set-Alias Chrome "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
 Set-Alias Yakit "D:\\Program Files\\yakit\\Yakit\\Yakit.exe"
-
-
 ```
+
+#### 添加右键菜单
+
+1. 打开注册表编辑器（`regedit`）。
+
+2. 导航到以下路径：
+
+   ```
+   HKEY_CLASSES_ROOT\Directory\Background\shell
+   ```
+
+   这个路径用于添加右键菜单到文件夹背景。如果你想添加到文件夹本身，可以导航到：
+
+   ```
+   HKEY_CLASSES_ROOT\Directory\shell
+   ```
+
+3. 在 `shell` 键下，右键点击空白处，选择“新建” > “项”，命名为 `WindowsTerminal`（或者你想要的名称）。
+
+4. 在新建的 `WindowsTerminal` 项中，右键点击空白处，选择“新建” > “项”，命名为 `command`。
+
+5. 在 `command` 项中，双击右侧窗口中的 `(默认)` 值，输入以下内容：
+
+   ```
+   "C:\Apps\WindowsTerminal\WindowsTerminal.exe" --profile "默认配置文件名称" --new-tab -d "%V"
+   ```
+
+   - 将 `C:\Apps\WindowsTerminal\WindowsTerminal.exe` 替换为你的 Windows Terminal 的实际路径。
+   - 如果你没有指定默认配置文件名称，可以省略 `--profile "默认配置文件名称"` 部分。
+   - `-d "%V"` 表示在当前文件夹路径下打开终端。
+
+6. 返回到 `WindowsTerminal` 项，双击右侧窗口中的 `(默认)` 值，输入你希望在右键菜单中显示的名称，例如 `在终端中打开`。
+
+#### **添加图标（可选）**
+
+如果你想为右键菜单项添加图标，可以进行以下操作：
+
+1. 在 `WindowsTerminal` 项中，右键点击空白处，选择“新建” > “字符串值”，命名为 `Icon`。
+
+2. 双击 `Icon`，输入 Windows Terminal 的图标路径，例如：
+
+   ```
+   "C:\Apps\WindowsTerminal\WindowsTerminal.exe,0"
+   ```
+
+   这里的 `,0` 表示使用该程序的第一个图标。
 
 # 2. starship配置
 
@@ -433,3 +480,4 @@ Lazyvim安装文档：[Fetching Title#cmv7](http://www.lazyvim.org/installation)
 | **space n**       | 通知历史                             |
 | **space cl**      | Lsp info                             |
 | **space cm**      | Mason                                |
+| **tt**            | 打开yazi 文件管理                    |
