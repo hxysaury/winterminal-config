@@ -481,3 +481,142 @@ Lazyvim安装文档：[Fetching Title#cmv7](http://www.lazyvim.org/installation)
 | **space cl**      | Lsp info                             |
 | **space cm**      | Mason                                |
 | **tt**            | 打开yazi 文件管理                    |
+
+# 6.RIME 输入法
+
+官方最新版本的小狼毫: https://github.com/rime/weasel/releases/latest
+
+默认情况下的配置文件(配置文件存放在配置目录下；如果不存在，可以手动创建)：
+
+| 文件                                                       | 注释                                               |
+| ---------------------------------------------------------- | -------------------------------------------------- |
+| default.custom.yaml                                        | 核心配置、全局配置                                 |
+| squirrel.custom.yaml / weasel.custom.yaml / ibus_rime.yaml | 平台相关配置。样式皮肤，不同软件默认输入法状态等。 |
+| <方案标识>.custom.yaml                                     | 输入方案的定制配置                                 |
+| <名称>.dict.yaml                                           | 词典                                               |
+| custom_phrase.txt                                          | 自定义短语                                         |
+
+**优先级**：输入方案的定制配置  > 核心配置、全局配置 > 系统自带的**default**.yaml
+
+
+
+下载配置模板：[薄荷输入法 – Oh-my-rime](https://github.com/Mintimate/oh-my-rime)
+
+该模板特点，已经配置：
+
+- 内置[雾凇拼音](https://github.com/iDvel/rime-ice)词典，并且仓库内的字典与雾凇拼音同步；
+- 已经配置好了水鸭青皮肤样式配置；
+- 内置三款输入法： 薄荷拼音（全拼）、地球拼音-薄荷定制和五笔98薄荷定制，方便不同小伙伴选择自己喜欢的输入方式；
+- 配置多款`lua`脚本： 支持输入`R`后输入数字，进行数字转换，支持输入`week`、`date`、`time`和`lunar`分别输入当前星期、日期、时间以及农历日期，以词定字等。
+- 支持中英混合输入、支持emoji输入、支持繁体输入等。
+
+只需要下载并移动文件到配置目录（用户文件夹），重新部署即可：
+
+![image-20250208094652740](./imgs/image-20250208094652740.png)
+
+详细的配置，可以查看：
+
+- [薄荷输入法 Oh-my-rime 官方文档: https://www.mintimate.cc](https://www.mintimate.cc/)
+
+
+
+通过东风破导入薄荷输入配置。东风破的前置条件：
+
+- 已经安装好 Git，并且配置到环境变量内；
+
+如果你是Windows用户，其实小狼毫已经自带一个半成品的东风破，你可以在小狼毫的`方案选单设定`中的`获取更多输入方案`内激活东风破：
+
+![image-20250208100042305](./imgs/image-20250208100042305.png)
+
+之后，在这个界面内，输入薄荷的配方：
+
+```
+Mintimate/oh-my-rime:plum/full
+```
+
+
+
+
+
+### 方案切换
+
+使用热键进行方案切换，热键默认是`Ctrl + ~`或`F4`：
+
+其中`F4`比较容易冲突，那么可以进行修改.
+直接配置`default.custom.yaml`里的`hotkeys`
+
+```yaml
+"switcher/hotkeys":
+  - "Control+grave"
+```
+
+![image-20250208095407909](./imgs/image-20250208095407909.png)
+
+### 配色样式
+
+`weasel.custom.yaml`只需要添加
+
+```yaml
+patch:
+  "style/color_scheme": mint_dark_green
+  
+  "style/horizontal": true #横向显示
+  "us_keyboard_layout": true
+  "style/display_tray_icon": true
+  "style/font_face": "PingFang"
+  "style/font_point": 10
+  "style/label_font_point": 6 # 候选词数字大小
+  "style/inline_preedit": false # 内嵌预编辑
+  "style/corner_radius": 20 # 窗口圆角半径
+  "style/layout/border": 0 # 窗口边界高度，大于圆角半径才有效果
+  "style/layout/border_width": 0 # 窗口边界宽度，大于圆角半径才有效果
+  "style/layout/candidate_spacing": 12
+  "style/layout/hilite_padding": 8
+  "style/layout/hilite_spacing": 3
+  "style/layout/margin_x": 8
+  "style/layout/margin_y": 8
+  "style/layout/round_corner": 7
+  "style/layout/spacing": 10
+
+```
+
+### 双拼编码自定义
+
+
+
+薄荷的默认配置，双拼的候选区编码是有做转换的，比如：小鹤双拼需要拼写`你好`，会出现`nihao`，而不是`nihc`：
+
+
+
+![image-20250208101216042](./imgs/image-20250208101216042.png)
+
+创建`double_pinyin_flypy.custom.yaml`文件：
+
+```yaml
+# Rime Custom
+# encoding: utf-8
+
+patch:
+  translator/preedit_format: []
+```
+
+之后，重新部署输入法，就可以看到双拼的编码了。
+
+
+
+### 输入符号
+
+default.custom.yaml
+
+```yaml
+patch:
+  punctuator/import_preset: symbols
+  recognizer/patterns/punct: '^/([0-9]0?|[A-Za-z]+)$'
+```
+
+![image-20250208104739040](./imgs/image-20250208104739040.png)
+
+![image-20250208104744387](./imgs/image-20250208104744387.png)
+
+![image-20250208104752187](./imgs/image-20250208104752187.png)
+
