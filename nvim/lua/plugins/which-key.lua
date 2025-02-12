@@ -52,6 +52,8 @@ return {
 
     wk.add({
       { "<leader>l", group = "Others" },
+      { "<leader>lh", desc = "yazi help?" },
+      { "<leader>lp", desc = "PastImage" },
     })
     wk.add({
       { "<leader>D", group = "DataBase" },

@@ -4,5 +4,11 @@ return {
   keys = {
     { "tt", "<cmd>Yazi<CR>", desc = "Toggle Yazi" },
   },
+  opts = {
+    open_for_directories = false,
+    keymaps = {
+      show_help = "<f1>",
+    },
+  },
   config = function() end,
 }

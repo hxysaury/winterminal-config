@@ -1,36 +1,22 @@
-return{}
--- return {
---   {
---     "FLYDonkey123/deepseek.nvim",
---     config = function()
---       local api_key = os.getenv("DEEPSEEK_API_KEY")
---       if not api_key then
---         print("Error: DEEPSEEK_API_KEY environment variable is not set.")
---         return
---       end
---
---       require("deepseek").setup({
---         api_key = api_key,
---         api_url = "https://api.deepseek.com/v1", -- 可选配置
---         keymaps = {
---           generate = "<leader>lg", -- 代码生成快捷键
---           optimize = "<leader>lo", -- 代码优化快捷键
---           analyze = "<leader>la", -- 代码分析快捷键
---           chat = "<leader>lc", -- AI 聊天快捷键
---         },
---         chat = {
---           system_prompt = "You are a helpful AI assistant", -- 聊天系统提示
---           max_history = 10, -- 最大聊天历史记录
---           enable_memory = true, -- 启用聊天记忆
---           ui = {
---             enable = true,
---             position = "float", -- 聊天界面位置
---             width = 0.5, -- 浮动窗口宽度
---             height = 0.5, -- 浮动窗口高度
---             border = "rounded", -- 窗口边框样式
---           },
---         },
---       })
---     end,
---   },
--- }
+-- ===
+-- === 一个ai编程助手
+-- ===
+-- 注册地址：https://codewebchat.fittentech.cn:15443/?ide=nvim
+return {
+  "luozhiya/fittencode.nvim",
+  config = function()
+    require("fittencode").setup({
+      -- completion_mode ='source',
+      keymaps = {
+        inline = {
+          ["<S-CR>"] = "accept_all_suggestions", -- 接受所有建议
+          ["<C-i>"] = "accept_line", -- 接受当前行
+          -- ['<C-i>'] = 'accept_word', -- 接受当前单词
+          ["<C-n>"] = "revoke_line", -- 撤销当前行
+          -- ['<C-n>'] = 'revoke_word', -- 撤销当前单词
+          ["<c-\\>"] = "triggering_completion", -- 触发补全
+        },
+      },
+    })
+  end,
+}
